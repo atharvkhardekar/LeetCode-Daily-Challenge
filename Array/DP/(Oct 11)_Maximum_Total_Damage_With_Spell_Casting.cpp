@@ -1,5 +1,5 @@
 // LeetCode Problem No. 3186
-// Daily Challenge - 11/10/2025\
+// Daily Challenge - 11/10/2025
 
 class Solution {
 public:
