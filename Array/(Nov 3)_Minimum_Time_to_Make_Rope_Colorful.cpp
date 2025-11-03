@@ -1,0 +1,26 @@
+// LeetCode Problem No. 1578
+// Daily Challenge - 03/11/2025
+
+class Solution{
+public:
+    int minCost(string colors, vector<int> &neededTime)
+    {
+        int n = colors.size(), sum = 0;
+
+        for (int i = 1; i < n; i++)
+        {
+            int maxi = 0; 
+            while (i < n and colors[i] == colors[i - 1])
+            {
+                sum += neededTime[i - 1];
+                maxi = max(maxi, neededTime[i - 1]);
+                ++i;
+            }
+            sum += neededTime[i - 1];
+            maxi = max(maxi, neededTime[i - 1]);
+            if (maxi != 0)
+                sum -= maxi;
+        }
+        return sum;
+    }
+};
